@@ -10,19 +10,20 @@ public class ConsumerAgent extends Agent {
     
     private String targetProduct; // Le produit qu'on veut acheter
 
-    @Override
+  @Override
     protected void setup() {
-        // 1. Récupération des arguments passés lors de la création de l'agent
         Object[] args = getArguments();
         if (args != null && args.length > 0) {
             targetProduct = (String) args[0];
             System.out.println("Consommateur " + getLocalName() + " cherche à acheter : " + targetProduct);
 
-            // 2. On lance le comportement d'achat
-            addBehaviour(new PurchaseOrderBehaviour());
-        } else {
-            System.out.println("Erreur : Aucun produit spécifié en argument.");
-            doDelete(); // On tue l'agent s'il n'a rien à faire
+            // On utilise un WakerBehaviour pour retarder l'achat de 20 secondes (20000 ms)
+            addBehaviour(new jade.core.behaviours.WakerBehaviour(this, 20000) {
+                @Override
+                protected void onWake() {
+                    myAgent.addBehaviour(new PurchaseOrderBehaviour());
+                }
+            });
         }
     }
 
