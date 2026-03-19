@@ -1,0 +1,10 @@
+# Fichiers compilés
+bin/
+*.class
+
+# Dossiers de configuration VS Code
+.vscode/
+.settings/
+
+# Ne pas ignorer le dossier lib pour que le projet marche directement sur un autre PC
+!lib/
