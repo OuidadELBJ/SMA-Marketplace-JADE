@@ -4,7 +4,7 @@ Ce dépôt contient le code source d'un projet de conception et de développemen
 
 Ce projet a été réalisé dans le cadre du module **IA distribuée & Systèmes multi-agents** à l'**ENSIAS** et simule un environnement transactionnel (Marketplace) de complexité croissante.
 
-## 📋 Table des matières
+##  Table des matières
 1. [Aperçu du projet](#-aperçu-du-projet)
 2. [Fonctionnalités implémentées](#-fonctionnalités-implémentées)
 3. [Technologies et Prérequis](#-technologies-et-prérequis)
